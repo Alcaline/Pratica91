@@ -14,7 +14,7 @@ import java.util.logging.Logger;
  * Template de projeto de programa Java usando Maven.
  * @author Wilson Horstmeyer Bogado <wilson@utfpr.edu.br>
  */
-public class Main {
+public class Pratica91 {
     public static void main(String[] args) {
         
         Runtime rt = Runtime.getRuntime();
@@ -43,7 +43,7 @@ public class Main {
         try {
             proc = rt.exec(cmd);
         } catch (IOException ex) {
-            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Pratica91.class.getName()).log(Level.SEVERE, null, ex);
         }
 
         try {
@@ -51,7 +51,7 @@ public class Main {
                     System.out.print(new String(saida, 0, nRead));
             }
         } catch (IOException ex) {
-                Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(Pratica91.class.getName()).log(Level.SEVERE, null, ex);
         }
         
         try {
@@ -62,9 +62,9 @@ public class Main {
             
         } catch (FileNotFoundException ex) {
             System.out.println("O caminho não existe.");
-            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Pratica91.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
-            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Pratica91.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 }

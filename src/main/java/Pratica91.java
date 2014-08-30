@@ -30,9 +30,9 @@ public class Pratica91 {
         System.out.println(
                 "Sistema Operacional: " + os +
                 "\nNumero de Processadores: " + rt.availableProcessors() +
-                "\nMemória Total: " + rt.totalMemory()/1000000 + "Mb" +
-                "\nMemória Livre: " + rt.freeMemory()/1000000 + "Mb" +
-                "\nMemória Disponível " + rt.maxMemory()/1000000 + "Mb"
+                "\nMemória Total: " + rt.totalMemory()/1024 + "Mb" +
+                "\nMemória Livre: " + rt.freeMemory()/1024 + "Mb" +
+                "\nMemória Disponível " + rt.maxMemory()/1024 + "Mb"
         );
         
         if (os.toLowerCase().contains("linux"))
@@ -42,7 +42,10 @@ public class Pratica91 {
            
         try {
             proc = rt.exec(cmd);
+            proc.waitFor();
         } catch (IOException ex) {
+            Logger.getLogger(Pratica91.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (InterruptedException ex) {
             Logger.getLogger(Pratica91.class.getName()).log(Level.SEVERE, null, ex);
         }
 
@@ -59,6 +62,7 @@ public class Pratica91 {
             
             while((linha = bfr.readLine()) != null)
                 System.out.println(linha);
+            bfr.close();
             
         } catch (FileNotFoundException ex) {
             System.out.println("O caminho não existe.");
